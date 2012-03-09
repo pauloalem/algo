@@ -16,7 +16,7 @@ parser.add_argument("password", metavar="p", type=str, help="Password registered
 args = parser.parse_args()
 
 
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.abspath(".")
 COURSE = args.course
 AUTH_URL = "https://www.coursera.org/%s/auth/auth_redirector?type=login&subtype=normal&email=&minimal=true" % COURSE
 
@@ -59,7 +59,7 @@ content = zip(page.cssselect(".list_header"),
 for header, item_section_list in content:
     section = Section(header.text)
     for li in item_section_list.findall("li"):
-        title = li.find('a').text
+        title = li.find('a').text.strip()
         for a in li.findall('div/a'):
             href = a.get('href')
             if '.ppt' in href:
