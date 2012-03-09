@@ -39,7 +39,7 @@ class Section(object):
         return join(BASE_DIR, self.section)
 
     def create_section_dir(self):
-        return os.mkdir(join(BASE_DIR, self.section))
+        return os.mkdir(self.get_section_dir())
 
     def save(self, name, data):
         if os.path.exists(self.get_section_dir()) == False:
