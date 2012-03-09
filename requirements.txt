@@ -1,0 +1,7 @@
+certifi==0.0.8
+chardet==1.0.1
+ipython==0.12
+lxml==2.3.3
+readline==6.2.2
+requests==0.10.7
+wsgiref==0.1.2
